@@ -6,8 +6,13 @@ week 6 homework. AJAX and giphy API
 
 ##'COMMIT History'
 
-commit: 1
+commit 1:
 repo creation
 
-comit: 2
+comit 2:
 file structure created
+
+commit 3:
+render buttons function complete
+
+
