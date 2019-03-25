@@ -12,7 +12,8 @@ $(document).ready(function () {
         if(newInput==""){
             $("#already-exists").text("Type something");
             setTimeout(function () { $("#already-exists").empty(); }, 2000);
-        } else{
+        } 
+        else{
         if (!category.includes(newInput)) {
             category.push(newInput);
         }
@@ -29,10 +30,15 @@ $(document).ready(function () {
 
 });//end of document ready
 
+
+function addNewBtn (event){
+    
+}
+
 function start() {
     $("#buttons").empty();
     for (var i = 0; i < category.length; i++) {
-        var emotiBtn = $("<button style=' outline-color: orangered; background-color: chartreuse; margin: 5px; border-radius: 10px;'>");
+        var emotiBtn = $("<button>");
         emotiBtn.addClass("category");
         emotiBtn.attr("data-category", category[i]);
         emotiBtn.text(category[i])
@@ -44,7 +50,7 @@ function displayGif() {
     $("#gif-show").empty();
     var gif = $(this).attr("data-category");
     console.log($(this).attr("data-category"))
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gif + "&trending&api_key=A8cJAfQajoJdTsbHqWiorpWrAJvJUv4u&limit=12"
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&trending&api_key=A8cJAfQajoJdTsbHqWiorpWrAJvJUv4u&limit=12"
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -55,10 +61,9 @@ function displayGif() {
 
 function renderGifs(response) {
     for (var j = 0; j < response.data.length; j++) {
-        var divcont=$("<div class='container' id='divcont' style=' '>");
+        var divcont=$("<div class='container' id='divcont'>");
         var rating = $("<p style=''>");
         var gifGrid = $("<img >");
-        gifGrid.attr("style", "cursor: pointer; width : 200px; height: 150px; margin: 3px");
         gifGrid.attr("src", response.data[j].images.fixed_height_still.url);
         gifGrid.attr("data-still", response.data[j].images.original_still.url);
         gifGrid.attr("data-animated", response.data[j].images.fixed_height.url);
@@ -77,12 +82,11 @@ function animateGif() {
     var animated = $(this).attr("data-animated");
     var still = $(this).attr("data-still");
     if (status == "still") {
-        console.log(animated);
+       
         $(this).attr("src", animated);
         $(this).attr("data-status", "animated");
     }
     else if (status == "animated") {
-        console.log(still);
         $(this).attr("src", still);
         $(this).attr("data-status", "still");
     }

@@ -23,15 +23,23 @@ margin: 20px;
 }
 
 button{
-    background-color: chartreuse;
-   
+       outline-color: orangered; background-color: chartreuse; margin: 5px; border-radius: 10px;
+}
+#add-input{
+    background-color: chartreuse; margin: 2px; border-radius: 10px;
 }
 
 .container{
     width: 100%;
-  
-    
+}
 
+.gifs{
+    cursor: pointer; width : 200px; height: 150px; margin: 3px;
+}
+#already-exists{
+    font-size: 25px;
+    color: red;
+    text-align: left;
 }
 #divcont{
     margin: 5px; width: 200px; display: inline-block;
