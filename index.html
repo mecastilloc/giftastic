@@ -11,62 +11,57 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+        <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
     <title>GifTastic</title>
 </head>
 
-<body>
+<body class="bg-transparent">
     <div id="outter-div">
         <div id="main">
             <div class="container">
-            <header>
-                <h1>GifTastic</h1>
-            </header>
+                <header>
+                    <h1>GifTastic</h1>
+                </header>
 
-            <!-- <div class="container"> -->
-            <div id="buttons" class="">
-
-                <!-- here array buttons are created via javascript -->
-                <!-- <button type="button" class="btn btn-outline-success">Apple</button> -->
-                <!-- </div> -->
-            </div>
-            <div class="row">
-                <div class="col-md-7">
-                    <!-- here gifs are created via javascript -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <div id="buttons" class="">
+                                <!-- here array buttons are created via javascript -->
+                                <!-- <button type="button" class="btn btn-outline-success">Apple</button> -->
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <form id="add-form">
+                                <label for="add-input"></label>
+                                <input type="text"  placeholder="Type new category" id="new-input">
+                                <br>
+                                <!-- Button triggers new button to be added -->
+                                <input style="background-color: chartreuse; margin: 2px; border-radius: 10px;" id="add-input" type="submit" value="Add New">
+                                <p id="already-exists"></p>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-5">
-                    <form id="add-form">
-                        <label for="add-input">Type Here</label>
-                        <input type="text" id="new-input">
-                        <br>
-                        <!-- Button triggers new button to be added -->
-                        <input id="add-input" type="submit" value="Add New">
-                        <p id="already-exists"></p>
+                <div class="row">
+                    <div id="gif-show" class="col-sm-12">
+                        <!-- here gifs are created via javascript -->
+                    </div>
                 </div>
             </div>
+            <div id="countdown"></div>
         </div>
     </div>
-</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="assets/javascript/java.js"></script>
-    <!-- <script>
-    var emotions = ["Anger", "Fear", "Happiness", "Sadness", "Surprise", "Boredom"];
+    
 
-for(var i=0; i<emotions.length; i++){
-    var emotiBtn=$("<button>");
-    emotiBtn.addClass("emotion");
-    emotiBtn.attr("data-emotion", emotions[i]);
-    emotiBtn.text(emotions[i])
-    $("#buttons").append(emotiBtn);
-    console.log(emotions[i]);
-}
-    </script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>

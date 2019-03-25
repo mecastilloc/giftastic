@@ -1,4 +1,46 @@
-.btn{
-    margin: 5px;
-    border-radius: 10px;
+html{
+    background-image: url("../images/bg.png");
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    }
+body{
+    color: azure;
+   
 }
+header{
+    font-family: 'Monoton', cursive;
+/* font-family: 'Bungee Shade', cursive; */
+/* font-family: 'Codystar', cursive; */
+color: rgb(255, 81, 0);
+margin: 20px;
+
+}
+
+button{
+    background-color: chartreuse;
+   
+}
+
+.container{
+    width: 100%;
+  
+    
+
+}
+#divcont{
+    margin: 5px; width: 200px; display: inline-block;
+}
+p{
+    margin:0; text-align: center;
+}
+input[type="text"], textarea {
+
+    background-color : darkorange; 
+  
+  }

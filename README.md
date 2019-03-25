@@ -15,4 +15,7 @@ file structure created
 commit 3:
 render buttons function complete
 
+commit 4:
+Basic functions complete, trying bonus features next
+
 
