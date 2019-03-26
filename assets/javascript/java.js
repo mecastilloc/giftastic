@@ -54,25 +54,40 @@ function displayGif() {
     $.ajax({
         url: queryURL,
         method: "GET"
+       
     }).then(function (response) {
+        console.log(queryURL);
         renderGifs(response);
     });
 }
 
 function renderGifs(response) {
     for (var j = 0; j < response.data.length; j++) {
-        var divcont=$("<div class='container' id='divcont'>");
-        var rating = $("<p style=''>");
+        var divcont1=$("<div class='container row' id='divcont' style='float: left'>");
+        //var divcont2=$("<div class='container row' id='divcont' style=''>");
+       
+        var rating = $("<p>");
         var gifGrid = $("<img >");
+        var title = $("<p>");
+        var score = $("<p>");
+        var download = $("<button label='download'>");
+        var favorite = $("<button>");
+        rating.text("Rating: " + response.data[j].rating);
         gifGrid.attr("src", response.data[j].images.fixed_height_still.url);
         gifGrid.attr("data-still", response.data[j].images.original_still.url);
         gifGrid.attr("data-animated", response.data[j].images.fixed_height.url);
         gifGrid.attr("data-status", 'still');
         gifGrid.addClass("gifs");
-        rating.text("Rating: " + response.data[j].rating);
-        $(divcont).append(rating);
-        $(divcont).append(gifGrid);
-        $("#gif-show").append(divcont);
+        title.text("Title: " + response.data[j].title);
+        score.text("Score: " + response.data[j]._score);
+        $(divcont1).append(rating);
+        $(divcont1).append(gifGrid);
+        $(divcont1).append(title);
+        $(divcont1).append(score);
+        $(divcont1).append(download);
+        $(divcont1).append(favorite);
+        $("#gif-show").append(divcont1);
+        //$("#gif-show").append(divcont2);
     }
 }
 

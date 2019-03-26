@@ -21,4 +21,7 @@ Basic functions complete, trying bonus features next
 commit 5:
 changing http to https for correct deploy at github pages
 
+commit 6:
+added more gif's info
+
 
