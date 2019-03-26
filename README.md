@@ -24,4 +24,5 @@ changing http to https for correct deploy at github pages
 commit 6:
 added more gif's info
 
-
+commmit 7:
+request 10 more gifs added whitout clearing

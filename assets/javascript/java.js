@@ -1,4 +1,6 @@
 var category = ["Angry", "Fear", "Happy", "Sad", "Surprise", "Bored", "Dance"];
+var gif;
+var count=0;
 
 
 $(document).ready(function () {
@@ -27,13 +29,12 @@ $(document).ready(function () {
     });
     $(document).on("click", ".category", displayGif);
     $(document).on("click", ".gifs", animateGif);
-
+    $(document).on("click", "#add-more", displayGif);
+    
 });//end of document ready
 
 
-function addNewBtn (event){
-    
-}
+
 
 function start() {
     $("#buttons").empty();
@@ -47,10 +48,14 @@ function start() {
 }
 
 function displayGif() {
+   
+if(gif!=($(this).attr("data-category"))){
     $("#gif-show").empty();
-    var gif = $(this).attr("data-category");
+}
+    
+    gif = $(this).attr("data-category");
     console.log($(this).attr("data-category"))
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&trending&api_key=A8cJAfQajoJdTsbHqWiorpWrAJvJUv4u&limit=12"
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&trending&api_key=A8cJAfQajoJdTsbHqWiorpWrAJvJUv4u&limit=50"
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -62,10 +67,13 @@ function displayGif() {
 }
 
 function renderGifs(response) {
-    for (var j = 0; j < response.data.length; j++) {
-        var divcont1=$("<div class='container row' id='divcont' style='float: left'>");
+    $("#moreGif").empty();
+    var addMore= $("<h5 id='add-more'>")
+    addMore.text("Click again to Add More (50 Gifs max)");
+    $("#moreGif").append(addMore);
+    for (j = count; j < count+10; j++) {
+        var divcont1=$("<div class='' id='divcont' style='height: 370px'>");
         //var divcont2=$("<div class='container row' id='divcont' style=''>");
-       
         var rating = $("<p>");
         var gifGrid = $("<img >");
         var title = $("<p>");
@@ -80,16 +88,22 @@ function renderGifs(response) {
         gifGrid.addClass("gifs");
         title.text("Title: " + response.data[j].title);
         score.text("Score: " + response.data[j]._score);
+        favorite.text("Add to Favorite");
+        download.text("Download");
         $(divcont1).append(rating);
         $(divcont1).append(gifGrid);
         $(divcont1).append(title);
         $(divcont1).append(score);
-        $(divcont1).append(download);
         $(divcont1).append(favorite);
-        $("#gif-show").append(divcont1);
+        $(divcont1).append(download);
+        
+        $("#gif-show").prepend(divcont1);
         //$("#gif-show").append(divcont2);
     }
+    count+=10;
 }
+
+
 
 function animateGif() {
     console.log($(this).attr("data-status"));
@@ -106,3 +120,5 @@ function animateGif() {
         $(this).attr("data-status", "still");
     }
 }
+
+
