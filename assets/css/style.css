@@ -11,6 +11,7 @@ html{
     }
 body{
     color: azure;
+   
     
    
 }
@@ -42,7 +43,7 @@ button{
     color: red;
     text-align: left;
 }
-#divcont{
+#divcont, #divcont2{
     margin: 5px; width: 200px; display: inline-block;
 }
 p{
