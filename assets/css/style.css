@@ -1,4 +1,4 @@
-html{
+html {
     background-image: url("../images/bg.png");
     background-color: black;
     -webkit-background-size: cover;
@@ -8,49 +8,84 @@ html{
     background-repeat: no-repeat;
     /* height: 100%; */
     width: 100%;
-    }
-body{
-    color: azure;
-   
-    
-   
 }
-header{
+
+header {
     font-family: 'Monoton', cursive;
-/* font-family: 'Bungee Shade', cursive; */
-/* font-family: 'Codystar', cursive; */
-color: rgb(255, 81, 0);
-margin: 20px;
-
+    color: rgb(255, 81, 0);
+    margin: 20px;
 }
 
-button{
-       outline-color: orangered; background-color: chartreuse; margin: 5px; border-radius: 10px;
-}
-#add-input{
-    background-color: chartreuse; margin: 2px; border-radius: 10px;
-}
-
-.container{
+.container {
     width: 100%;
 }
 
-.gifs{
-    cursor: pointer; width : 200px; height: 150px; margin: 3px;
+.btn {
+    outline-color: orangered;
+    /* background-color: 	rgb(158, 153, 78); */
+    color: chartreuse;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 3px;
 }
-#already-exists{
+
+#divcont, #divcont2 {
+    margin: 5px;
+    width: 200px;
+    display: inline-block;
+}
+
+.card {
+    width: 220px;
+    margin: auto;
+}
+
+.card-body {
+    height: 130px;
+    padding: 0px;
+}
+
+.card-footer {
+    padding: 5px;
+    text-align: center;
+}
+
+h2 {
+    color: orangered;
+    font-family: 'Faster One', cursive;
+}
+
+h6 {
+    color: orangered;
+    margin-left: 20px;
+}
+
+.gifs {
+    cursor: pointer;
+    width: 200px;
+    height: 170px;
+}
+
+#already-exists {
     font-size: 25px;
     color: red;
     text-align: left;
 }
-#divcont, #divcont2{
-    margin: 5px; width: 200px; display: inline-block;
-}
-p{
-    margin:0; text-align: center;
-}
-input[type="text"], textarea {
 
-    background-color : darkorange; 
-  
-  }
+p {
+    margin: 0;
+    color: khaki;
+}
+
+input[type="text"], textarea {
+    background-color: darkorange;
+}
+
+.test+.tooltip>.tooltip-inner {
+    background-color: #73AD21;
+    color: #FFFFFF;
+    border: 1px solid green;
+    padding: 15px;
+    font-size: 20px;
+}
